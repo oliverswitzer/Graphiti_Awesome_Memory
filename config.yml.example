@@ -1,47 +1,44 @@
 app:
   project_name: graphiti-memory
   environment: development
-  base_url: http://192.168.1.98:8000
-  admin_frontend_url: http://192.168.1.98:3000
+  base_url: http://your-pc-hostname:8001
+  admin_frontend_url: http://your-pc-hostname:3000
 
 neo4j:
   uri: bolt://neo4j:7687
   user: neo4j
-  password: neo4j_password_here
+  password: CHANGE_ME
   http_port: 7474
   bolt_port: 7687
 
 redis:
   url: redis://redis:6379/0
 
-# Separate configurations for each model type
 llm:
   base_url: https://api.openai.com/v1
-  api_key: sk-LLM_KEY_HERE
-  model: gpt-4o-mini
+  api_key: sk-YOUR_OPENAI_KEY
+  model: gpt-4.1
 
-# Fast LLM for simple operations (deduplication, validation)
-# Use a non-reasoning model for 5-10x speedup on 80% of operations
 llm_fast:
   base_url: https://api.openai.com/v1
-  api_key: sk-LLM_KEY_HERE
-  model: qwen2.5:7b
+  api_key: sk-YOUR_OPENAI_KEY
+  model: gpt-4.1-mini
 
 embeddings:
   base_url: https://api.openai.com/v1
-  api_key: sk-EMBEDDING_KEY_HERE
+  api_key: sk-YOUR_OPENAI_KEY
   model: text-embedding-3-small
 
 reranker:
   base_url: https://api.openai.com/v1
-  api_key: sk-RERANKER_KEY_HERE
+  api_key: sk-YOUR_OPENAI_KEY
   model: reranker-001
 
 adapter:
   host: 0.0.0.0
   port: 8000
-  api_key: adapter-secret-api-key
-  jwt_secret: supersecretjwtkey
+  api_key: CHANGE_ME
+  jwt_secret: CHANGE_ME
   allowed_origins:
     - http://localhost:3000
 
@@ -53,13 +50,13 @@ worker:
 
 security:
   admin_username: admin
-  admin_password: admin_password_here
+  admin_password: CHANGE_ME
   jwt_expiry_seconds: 3600
 
 logging:
   level: INFO
 
 docker:
-  neo4j_image: neo4j:5.6
+  neo4j_image: neo4j:5.26.0
   adapter_image: graphiti-adapter:latest
   frontend_image: graphiti-admin:latest

@@ -1,0 +1,8 @@
+# Generated env files (contain secrets)
+.env
+.env.adapter
+.env.worker
+frontend/.env
+
+# Config with secrets (use config.yml.example as template)
+config.yml

@@ -1,3 +1,9 @@
+> **This is a fork of [GoGoButters/Graphiti_Awesome_Memory](https://github.com/GoGoButters/Graphiti_Awesome_Memory).**
+> I use it to run a personal Graphiti instance on my home PC as a memory backend for n8n AI agent workflows.
+> See [`adrs/001-initial-setup.md`](adrs/001-initial-setup.md) for details on what was changed and why.
+
+---
+
 <div align="center">
   <img src="logo.png" alt="Graphiti Logo" width="400"/>
 
